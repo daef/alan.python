@@ -20,8 +20,14 @@ def test_tape(prg, tape = [], cur = 0):
   null = '_'
   state = 'Start'
   fin = ['End','Overflow']
-
+  n = 0
+  
   while not state in fin:
+    if n > 100000:
+      print(f'Error:  Exceeded maximum algorithm steps (100000)')
+      return False
+    else: 
+      n += 1
     r = tape[cur]
     matches = [x for x in prg if x[0] == r and x[1] == state]
     if len(matches) != 1:
