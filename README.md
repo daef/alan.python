@@ -65,3 +65,16 @@ _101110_______
 _0000
 ^- Overflow
 ```
+
+## TestAll
+
+You can specify how many bit additions to test:
+```bash
+python3 tu.py --json addition.json --testall 4
+TestAll Complete: Congratulations! There were no problems found!
+
+python3 tu.py --json addition.json --testall 4
+Error at ['1', '1', '1', '1'] + ['0', '0', '0', '0']: Did not terminate in state "End". Ended in state Overflow
+TestAll Complete: See above for errors in your program!
+```
+Note that (depending on your hardware) your computer may not handle anything above ~6 bits, so start with less and work your way up! 
