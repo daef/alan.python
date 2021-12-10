@@ -184,7 +184,7 @@ def main(args):
   parser.add_argument('--debug', '-d', help='Turn on debug', default=False, action='store_true')
   parser.add_argument('--tape', '-t', help='Tape to test', metavar="", type=str)
   parser.add_argument('--testcases', '-tc', help='Amount of bits create possible testcases for addition', choices=[4, 6, 8], type=int)
-  parser.add_argument('--testall', '-ta', help='Amount of bits to test every single combination with', choices=[1,2,3,4,5,6,7,8,9,10], type=int)
+  parser.add_argument('--testall', '-ta', help='Amount of bits to test every single combination with', choices=range(1,11), type=int)
   args = parser.parse_args()
 
   if not any(vars(args).values()):
